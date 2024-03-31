@@ -10,21 +10,24 @@ import SwiftUI
 struct MangaDetailView: View {
     @Binding var manga: MangaModel
     var body: some View {
-        ScrollView {
-            VStack{
-                ZStack{
-                    VStack{
-                        Image("default_cover")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .edgesIgnoringSafeArea(.top)
-                        
-                        DescriptionView(manga: $manga)
-                            .offset(y: -40)
+        NavigationStack{
+            ScrollView {
+                VStack{
+                    ZStack{
+                        VStack{
+                            Image("default_cover")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .edgesIgnoringSafeArea(.top)
+                            
+                            DescriptionView(manga: $manga)
+                                .offset(y: -40)
+                        }
                     }
                 }
             }
         }
+        .toolbar(.hidden)
     }
 }
 
@@ -57,7 +60,10 @@ struct DescriptionView: View {
                         .cornerRadius(100)
                 }
                 Spacer()
-                Button(action: {}) {
+                NavigationLink(destination: ReadView(
+                    manga_name: .constant("berserk"),
+                    chapter: .constant("1")
+                )) {
                     Text("Continue Reading")
                         .padding()
                         .foregroundColor(.white)

@@ -31,6 +31,7 @@ struct StackedCardsFragment: View {
                                         
                                     }
                             }
+                            .toolbar(.hidden)
                             .zIndex(mangasDisplay.zIndex(manga))
                         }
                     }
