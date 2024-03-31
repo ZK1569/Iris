@@ -14,7 +14,6 @@ struct HomeView: View {
     @State private var indicatorWidth: CGFloat = 0
     @State private var indicatorPosition: CGFloat = 0
     var body: some View {
-
         TabView(selection: $currentTab) {
             ForEach(tabs) { tab in
                 GeometryReader(content: { _ in
@@ -38,6 +37,7 @@ struct HomeView: View {
         .overlay(alignment: .top, content: {
             TabsView()
         })
+        
     }
     
     @ViewBuilder

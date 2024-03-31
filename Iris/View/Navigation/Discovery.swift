@@ -12,14 +12,19 @@ struct DiscoveryView: View {
     
     @State private var showError: Bool = false
     @State private var errorMessage: String = ""
+    
+    @State private var isDataLoaded = false
+    
     var body: some View {
         NavigationStack {
             StackedCardsFragment(mangasDisplay: $mangas)
         }
         .onAppear {
+            guard !isDataLoaded else { return }
             Task {
                 do {
                     mangas = try await apiCall.getRandomMangas()
+                    isDataLoaded = true
                 } catch {
                     errorMessage = error.localizedDescription
                     showError = true

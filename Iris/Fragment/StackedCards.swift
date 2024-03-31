@@ -17,7 +17,7 @@ struct StackedCardsFragment: View {
                 ScrollView(.horizontal) {
                     HStack(spacing: 0) {
                         ForEach($mangasDisplay) { $manga in
-                            NavigationLink(destination: {}) {
+                            NavigationLink(destination: MangaDetailView(manga: $manga)) {
                                 DisplayMangaCoverFragment(manga: $manga)
                                     // INFO: Width of the cards
                                     .padding(.horizontal, 40)

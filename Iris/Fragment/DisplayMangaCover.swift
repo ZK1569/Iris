@@ -18,7 +18,7 @@ struct DisplayMangaCoverFragment: View {
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(15)
                 } else if phrase.error != nil {
-                    Image(manga.coverUrl)
+                    Image("default_cover")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .cornerRadius(15)
