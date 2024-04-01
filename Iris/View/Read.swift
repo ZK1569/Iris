@@ -17,17 +17,14 @@ struct ReadView: View {
     @State private var errorMessage: String = ""
     
     var body: some View {
-        NavigationStack{
-            ScrollView {
-                LazyVStack {
-                    ForEach($pages, id: \.self) { page in
-                        ReadpageFramgent(url: page)
-                            .frame(minHeight: 400)
-                    }
-                    .ignoresSafeArea(.all)
+        ScrollView {
+            LazyVStack {
+                ForEach($pages, id: \.self) { page in
+                    ReadpageFramgent(url: page)
                 }
             }
         }
+        .ignoresSafeArea(.all)
         .toolbar(.hidden)
         .onAppear {
             Task{

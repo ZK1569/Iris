@@ -22,6 +22,7 @@ struct ReadpageFramgent: View {
                     ProgressView()
                 }
             }
+            .frame(minHeight: 400)
     }
 }
 

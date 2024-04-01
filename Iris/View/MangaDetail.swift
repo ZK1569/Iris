@@ -27,12 +27,12 @@ struct MangaDetailView: View {
                 }
             }
         }
-        .toolbar(.hidden)
     }
 }
 
 struct DescriptionView: View {
     @Binding var manga: MangaModel
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         VStack(alignment: .leading) {
             Text(manga.title)
@@ -43,7 +43,7 @@ struct DescriptionView: View {
                 Spacer()
             }
             
-            Text("Decription")
+            Text("Description")
                 .fontWeight(.medium)
                 .padding(.vertical, 8)
             
@@ -101,7 +101,7 @@ struct DescriptionView: View {
             .padding(.vertical)
         }
         .padding()
-        .background(Color.white)
+        .background(colorScheme == .dark ? .black : .white)
         .cornerRadius(40)
     }
 }

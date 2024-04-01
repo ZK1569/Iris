@@ -72,4 +72,4 @@ class ApiCall {
     
 }
 
-var apiCall = ApiCall(endpoint: "https://f43e-2a01-e0a-5c9-e830-ece9-d348-cc9a-2d4.ngrok-free.app")
+var apiCall = ApiCall(endpoint: "https://8b18-2a01-e0a-5c9-e830-ece9-d348-cc9a-2d4.ngrok-free.app")
